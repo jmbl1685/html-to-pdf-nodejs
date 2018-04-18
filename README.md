@@ -1,10 +1,10 @@
 # GENERAR PDF A TRAVÉS DEL CONTENIDO HTML (Nodejs/Express)
 
 <h3>Capturas</h3>
-<img width="600" src="https://image.ibb.co/jH5Q5Q/001.png"></img>
-<img width="600" src="https://image.ibb.co/geiZzk/002.png"></img>
-<img width="600" src="https://image.ibb.co/mzwXkQ/003.png"></img>
-<img width="600" src="https://image.ibb.co/joXSKk/004.png"></img>
+<img src="https://image.ibb.co/jH5Q5Q/001.png"></img>
+<img src="https://image.ibb.co/geiZzk/002.png"></img>
+<img src="https://image.ibb.co/mzwXkQ/003.png"></img>
+<img src="https://image.ibb.co/joXSKk/004.png"></img>
 
 * html-pdf
 * node-fetch
