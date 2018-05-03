@@ -1,6 +1,6 @@
 # Generate PDF through the HTML content. (Nodejs/Express)
 
-<h3>Capturas</h3>
+<h3>Screenshots</h3>
 <img src="https://image.ibb.co/jH5Q5Q/001.png"></img>
 <img src="https://image.ibb.co/geiZzk/002.png"></img>
 <img src="https://image.ibb.co/mzwXkQ/003.png"></img>
@@ -10,9 +10,9 @@
 * node-fetch
 * requestify
 
-## DATA
+## DATA EXAMPLE
 
-``` bash
+``` js
 [
   {
     img: "https://bakedpizza.com.co/media/catalog/product/cache/1/small_image/500x500/9df78eab33525d08d6e5fb8d27136e95/h/a/hamburguesa_doble_carne_mex.png",
