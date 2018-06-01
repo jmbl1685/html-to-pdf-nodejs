@@ -1,11 +1,8 @@
 'use strict'
 
-// Módulos a requerir //
-const express = require ('express'),
-      app = require ('./app'),
-      port = process.env.PORT || 3000;
+const config = require('./config/config')
+const app = require ('./app')
 
-// Inicialización del servidor //
-app.listen(port, () => {
+app.listen(config.port, () => {
   console.log('Server started')
 })

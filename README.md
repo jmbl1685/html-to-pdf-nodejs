@@ -1,4 +1,4 @@
-# GENERAR PDF A TRAVÉS DEL CONTENIDO HTML (Nodejs/Express)
+# Generate PDF through the HTML content. (Nodejs/Express)
 
 <h3>Capturas</h3>
 <img src="https://image.ibb.co/jH5Q5Q/001.png"></img>
@@ -62,7 +62,7 @@
 npm install
 
 # start project
-npm start
+npm run dev
 ```
 
 

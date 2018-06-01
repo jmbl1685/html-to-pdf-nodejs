@@ -1,33 +1,28 @@
 'use strict'
 
-const express = require('express'),
-  app = express(),
-  routes = express.Router(),
-  controller = require('../controllers/controller'),
-  fetch = require('node-fetch');
+const express = require('express')
+const routes = express.Router()
+const controller = require('../controllers/controller')
+const fetch = require('node-fetch')
+const config = require('../config/config')
 
-let array = [];
+let array = []
 
-// Consumir un API Rest, pueden utilizar el de su preferencia //
+const GetData = (async () => {
+  const request = await fetch(`http://${config.ip}:${config.port}/data`)
+  const response = await request.json()
+  array = response
+})()
 
-fetch('http://192.168.1.66:3000/data')
-  .then(res => res.json())
-  .then(res => { array = res })
-  .catch( err => console.log('Error'))
-
-// Endpoints //
-
-routes.get('/', (req, res) => { res.redirect('/report') });
+routes.post('/pdf', controller.ConvertBodyToPDF)
+routes.get('/data', controller.JSON_Generate)
 
 routes.get('/report', (req, res) => {
-  res.render('index', {
-    title: 'HTML to PDF',
-    data: array
-  });
-});
+  res.render('index', { title: 'HTML to PDF', data: array })
+})
 
-routes.post('/pdf', controller.convertBodyToPDF);
-routes.get('/data', controller.generateData)
+routes.get('/', (req, res) => {
+  res.redirect('/report')
+})
 
-module.exports = routes;
-
+module.exports = routes

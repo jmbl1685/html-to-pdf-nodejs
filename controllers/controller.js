@@ -1,19 +1,20 @@
 'use strict'
 
-const pdf = require('html-pdf'),
-  requestify = require('requestify'),
-  externalURL = 'http://192.168.1.66:3000/report',
-  data = require ('../data/data');
+const config = require('../config/config')
+const pdf = require('html-pdf')
+const requestify = require('requestify')
+const data = require('../data/data').values
 
-function convertBodyToPDF(req, res) {
+const ConvertBodyToPDF = async (req, res) => {
 
-  let validate = req.body.data;
+  let validate = req.body.data
 
   if (validate) {
 
-    requestify.get(externalURL).then(function (response) {
+    const request = await requestify.get(`http://${config.ip}:${config.port}/report`)
+    const response = await request
 
-      let head = `
+    let head = `
     <head>
       <title>busy</title>
       <meta charset="UTF-8">
@@ -23,46 +24,35 @@ function convertBodyToPDF(req, res) {
     </head>
     <style>
     #btn_pdf{ display: none }
-    </style>
-    `
-      let html = head + response.body
+    </style>`
 
-      let options = {
-        format: 'Letter',
-        border: '1cm'
-      };
+    let htmlBody = `${head} ${response.body}`
 
-      let _ruta = __dirname;
-      let ruta = _ruta.split('controllers')
+    let htmlOptions = {
+      format: 'Letter',
+      border: '1cm'
+    }
 
-      pdf.create(html, options).toFile( ruta[0] + '/download/report.pdf', function (err, ok) {
-        if (err) {
-          res.json({
-            data: 'error'
-          })
-        } else {
-          res.json({
-            data: 'success'
-          })
-        }
-      });
+    let downloadPath = `${__dirname.split('controllers')[0]}/download/report.pdf`
 
-    });
+    pdf.create(htmlBody, htmlOptions).toFile(downloadPath, (error, success) => {
 
-  } else {
-    console.log('La data es inválida')
+      if (error)
+        res.json({ data: error })
+      else
+        res.json({ data: success })
+
+    })
+
   }
 
 }
 
-function generateData(req, res) {
-
-  // Esta data es de prueba para generar contenido en el HTML //
-
+const JSON_Generate = (req, res) => {
   res.status(200).send(data)
 }
 
 module.exports = {
-  convertBodyToPDF,
-  generateData
+  ConvertBodyToPDF,
+  JSON_Generate
 }

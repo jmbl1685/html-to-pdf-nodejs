@@ -1,6 +1,6 @@
 'use strict'
 
-const data = [
+exports.values = [
   {
     img: 'https://bakedpizza.com.co/media/catalog/product/cache/1/small_image/500x500/9df78eab33525d08d6e5fb8d27136e95/h/a/hamburguesa_doble_carne_mex.png',
     name: 'Hamburgueza Todo Terreno',
@@ -12,7 +12,7 @@ const data = [
     description: 'A description which may flow for several lines and give context to the content.'
   },
   {
-    img: 'https://http2.mlstatic.com/excelentes-taquizas-y-comida-mexicana-D_NQ_NP_751821-MLM25734431910_072017-O.jpg',
+    img: 'http://rinconcitopaisa2.com/wp-content/uploads/2015/05/arrozcon-mariscos.jpg',
     name: 'Arroz de Mariscos',
     description: 'A description which may flow for several lines and give context to the content.'
   },
@@ -22,7 +22,7 @@ const data = [
     description: 'A description which may flow for several lines and give context to the content.'
   },
   {
-    img: 'http://amantesdelacocina.com/cocina/wp-content/uploads/2011/11/arepa2x.jpg',
+    img: 'https://amantesdelacocina.com/wp-content/uploads/2011/11/arepa2x.jpg',
     name: 'Arepa Rellena',
     description: 'A description which may flow for several lines and give context to the content.'
   },
@@ -32,15 +32,13 @@ const data = [
     description: 'A description which may flow for several lines and give context to the content.'
   },
   {
-    img: 'http://www.pidaloya.co/wp-content/uploads/2016/09/pechugapollo.jpg',
+    img: 'https://i.pinimg.com/236x/68/2a/01/682a01bc21cd2e02cb1bc60012e77b58--wordpress-delicious-food.jpg',
     name: 'Cerdo con papas a la francesa',
     description: 'A description which may flow for several lines and give context to the content.'
   },
   {
-    img: 'http://www.pidaloya.co/wp-content/uploads/2016/09/desgra.jpg',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPsLFq94cxrS5E_FbULjuipe7qWWxMIrSs6eY0IBrJclJpJy-5',
     name: 'Mazorca desgranada',
     description: 'A description which may flow for several lines and give context to the content.'
-  },
+  }
 ]
-
-module.exports = data;
