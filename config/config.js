@@ -1,8 +1,8 @@
-'use strict'
+    'use strict'
 
-const config = {
-    ip: '192.168.1.66',
-    port: process.env.PORT || 3000
-}
+    const config = {
+        ip: '192.168.1.67',
+        port: process.env.PORT || 3000
+    }
 
-module.exports = config
+    module.exports = config

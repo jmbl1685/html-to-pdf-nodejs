@@ -49,7 +49,7 @@ const ConvertBodyToPDF = async (req, res) => {
 }
 
 const JSON_Generate = (req, res) => {
-  res.status(200).send(data)
+  return res.status(200).send(data)
 }
 
 module.exports = {

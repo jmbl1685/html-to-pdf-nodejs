@@ -17,7 +17,7 @@ btn_pdf.addEventListener('click', () => {
         body: JSON.stringify({ data: true })
     }
 
-    fetch('http://192.168.1.66:3000/pdf', config)
+    fetch('http://192.168.1.67:3000/pdf', config)
         .then( res => {
             res.json()
         })
