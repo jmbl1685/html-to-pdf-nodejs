@@ -1,4 +1,4 @@
-# Generate PDF through the HTML content. (Nodejs/Express)
+# Generate PDF through the HTML content.
 
 <h3>Screenshots</h3>
 <img src="https://image.ibb.co/jH5Q5Q/001.png"></img>
@@ -9,6 +9,7 @@
 * html-pdf
 * node-fetch
 * requestify
+* izitoast
 
 ## DATA EXAMPLE
 
@@ -60,11 +61,33 @@
 ``` bash
 # install dependencies
 npm install
+```
 
+# Change IP Address
+```js
+Path: './config/config.js'
+
+'use strict'
+
+const config = {
+    ip: '192.168.1.66',
+    port: process.env.PORT || 3000
+}
+```
+
+```js
+Path: './views/js/main.js'
+
+const url = {
+    ip: '192.168.1.67',
+    port: 3000
+}
+```
+
+``` bash
 # start project
 npm run dev
 ```
-
 
 
 
